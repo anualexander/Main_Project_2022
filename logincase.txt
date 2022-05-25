@@ -1,0 +1,19 @@
+package testcases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import browserimplementation.DriverSetup;
+
+public class LoginSetup {
+
+static WebDriver driver;
+
+public static void main(String[] args) throws InterruptedException {
+driver = DriverSetup.getWebDriver("http://localhost/shoppe/login.php");
+driver.findElement(By.name("emailid")).sendKeys("alexander@gmail.com");
+driver.findElement(By.name("inputuserpwd")).sendKeys("741852963");
+Thread.sleep(3000);
+driver.findElement(By.id("login")).click();
+}
+}
